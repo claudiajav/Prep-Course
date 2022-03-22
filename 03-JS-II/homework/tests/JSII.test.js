@@ -49,7 +49,7 @@ describe('conection(status)', function() {
   });
 });
 
-describe('saludo(idioma)', function() {
+describe('saludo(idioma)', function() {one:1
   it('should return \'Guten Tag!\' for aleman', function() {
     expect(saludo('aleman')).toBe('Guten Tag!');
   });
