@@ -1,204 +1,345 @@
 /* eslint-disable no-undef */
 const {
-  obtenerMayor,
-  mayoriaDeEdad,
-  conection,
-  saludo,
-  colors,
-  esDiezOCinco,
-  estaEnRango,
-  esEntero,
-  fizzBuzz,
-  operadoresLogicos,
-  esPrimo,
-  esVerdadero,
-  tablaDelSeis,
-  tieneTresDigitos,
-  doWhile
-} = require('../homework');
-
-
-describe('obtenerMayor(x, y)', function() {
-  it('should return x if it is larger than y', function() {
-    expect(obtenerMayor(10, 5)).toBe(10);
+  nuevoString,
+  nuevoNumero,
+  nuevoBoolean,
+  nuevaResta,
+  nuevaMultiplicacion,
+  nuevoModulo,
+} = require('../Ejercicio 01');
+​
+const {
+  devolverString,
+  suma,
+  resta,
+  divide,
+  multiplica,
+  obtenerResto,
+} = require('../Ejercicio 02');
+​
+const {
+  tienenMismaLongitud,
+  sonIguales,
+  menosQueNoventa,
+  mayorQueCincuenta,
+  esPar,
+  esImpar,
+} = require('../Ejercicio 03');
+​
+const {
+  elevarAlCuadrado,
+  elevarAlCubo,
+  elevar,
+  redondearNumero,
+  redondearHaciaArriba,
+  numeroRandom,
+} = require('../Ejercicio 04');
+​
+const {
+  esPositivo,
+  agregarSimboloExclamacion,
+  combinarNombres,
+  obtenerSaludo,
+  obtenerAreaRectangulo,
+  retornarPerimetro,
+  areaDelTriangulo,
+  deEuroAdolar,
+  esVocal,
+} = require('../Ejercicio 05');
+​
+describe('JAVASCRIPT I', function () {
+  describe('EJERCICIO 01', function () {
+     describe('nuevoString', function () {
+        it('Debe ser un string', function () {
+           expect(typeof nuevoString).toBe('string');
+        });
+     });
+​
+     describe('nuevoNumero', function () {
+        it('Debe ser un número', function () {
+           expect(typeof nuevoNumero).toBe('number');
+        });
+     });
+​
+     describe('nuevoBoolean', function () {
+        it('Debe ser un booleano', function () {
+           expect(typeof nuevoBoolean).toBe('boolean');
+        });
+     });
+​
+     describe('nuevaResta', function () {
+        it('Debe ser la resta correcta', function () {
+           expect(nuevaResta).toBe(true);
+        });
+     });
+​
+     describe('nuevaMultiplicación', function () {
+        it('Debe ser la multiplicación correcta', function () {
+           expect(nuevaMultiplicacion).toBe(true);
+        });
+     });
+​
+     describe('nuevoModulo', function () {
+        it('Debe ser el resultado correcto del módulo', function () {
+           expect(nuevoModulo).toBe(true);
+        });
+     });
   });
-  it('should return y if it is larger than x', function() {
-    expect(obtenerMayor(50, 100)).toBe(100);
+​
+  describe('EJERCICIO 02', function () {
+     describe('devolverString(str)', function () {
+        it('Debe retornar el string provisto', function () {
+           expect(devolverString('Henry')).toBe('Henry');
+        });
+     });
+​
+     describe('suma(x, y)', function () {
+        it('Debe retornar la suma de los dos argumentos', function () {
+           expect(suma(5, 5)).toBe(10);
+           expect(suma(-1, 5)).toBe(4);
+        });
+     });
+​
+     describe('resta(x, y)', function () {
+        it('Debe retornar la resta de los dos argumentos', function () {
+           expect(resta(5, 5)).toBe(0);
+           expect(resta(-1, 5)).toBe(-6);
+           expect(resta(5, -5)).toBe(10);
+           expect(resta(0, 0)).toBe(0);
+        });
+     });
+​
+     describe('divide(x, y)', function () {
+        it('Debe retornar la division de los dos argumentos', function () {
+           expect(divide(5, 5)).toBe(1);
+           expect(divide(10, 5)).toBe(2);
+           expect(divide(11, 2)).toBe(5.5);
+        });
+     });
+​
+     describe('multiplica(x, y)', function () {
+        it('Debe retornar el producto de los dos argumentos', function () {
+           expect(multiplica(5, 5)).toBe(25);
+           expect(multiplica(10, -5)).toBe(-50);
+           expect(multiplica(11, 0)).toBe(0);
+        });
+     });
+​
+     describe('obtenerResto(x, y)', function () {
+        it('Debe retornar el resto de dividir x sobre y', function () {
+           expect(obtenerResto(15, 5)).toBe(0);
+           expect(obtenerResto(21, 5)).toBe(1);
+           expect(obtenerResto(22, 5)).toBe(2);
+        });
+     });
   });
-  it('should return either one if they are the same', function() {
-    expect(obtenerMayor(1000, 1000)).toBe(1000);
+​
+  describe('EJERCICIO 03', function () {
+     describe('sonIguales(x, y)', function () {
+        it('Debe devolver True si los argumentos son iguales', function () {
+           expect(sonIguales(15, 15)).toBe(true);
+           expect(sonIguales('test', 'test')).toBe(true);
+        });
+        it('Debe devolver False si los argumentos no son iguales', function () {
+           expect(sonIguales(90, 50)).toBe(false);
+        });
+     });
+​
+     describe('tienenMismaLongitud(str1, str2)', function () {
+        it('Debe devolver True si los strings tienen la misma longitud', function () {
+           expect(tienenMismaLongitud('javascript', 'bumfuzzled')).toBe(true);
+        });
+        it('Debe devolver False si los strings tienen la distinta longitud', function () {
+           expect(tienenMismaLongitud('hi', 'there')).toBe(false);
+        });
+     });
+​
+     describe('menosQueNoventa(num)', function () {
+        it('Debe devolver True si el número es menor a noventa', function () {
+           expect(menosQueNoventa(15)).toBe(true);
+        });
+        it('Debe devolver False si el número no es menor a noventa', function () {
+           expect(menosQueNoventa(90)).toBe(false);
+           expect(menosQueNoventa(100)).toBe(false);
+        });
+     });
+​
+     describe('mayorQueCincuenta(num)', function () {
+        it('Debe devolver True si el número es mayor a cincuenta', function () {
+           expect(mayorQueCincuenta(15)).toBe(false);
+           expect(mayorQueCincuenta(50)).toBe(false);
+           expect(mayorQueCincuenta(60)).toBe(true);
+        });
+        it('Debe devolver False si el número no es mayor a cincuenta', function () {
+           expect(mayorQueCincuenta(15)).toBe(false);
+           expect(mayorQueCincuenta(50)).toBe(false);
+           expect(mayorQueCincuenta(60)).toBe(true);
+        });
+     });
+​
+     describe('esPar(num)', function () {
+        it('Debe devolver True si el número es par', function () {
+           expect(esPar(6)).toBe(true);
+           expect(esPar(0)).toBe(true);
+        });
+        it('Debe devolver False si el número no es par', function () {
+           expect(esPar(7)).toBe(false);
+        });
+     });
+​
+     describe('esImpar(num)', function () {
+        it('Debe devolver True si el número es impar', function () {
+           expect(esImpar(6)).toBe(false);
+           expect(esImpar(7)).toBe(true);
+           expect(esImpar(0)).toBe(false);
+        });
+        it('Debe devolver False si el número no es impar', function () {
+           expect(esImpar(6)).toBe(false);
+           expect(esImpar(7)).toBe(true);
+           expect(esImpar(0)).toBe(false);
+        });
+     });
   });
-});
-
-describe('mayoriaDeEdad(edad)', function() {
-  it('should return \'Allowed\'if edad is equal or greater than 18', function() {
-    expect(mayoriaDeEdad(18)).toBe('Allowed');
-    expect(mayoriaDeEdad(35)).toBe('Allowed');
+​
+  describe('EJERCICIO 04', function () {
+     describe('elevarAlCuadrado(num)', function () {
+        it('Debe devolver el número elevado al cuadrado', function () {
+           expect(elevarAlCuadrado(6)).toBe(36);
+           expect(elevarAlCuadrado(7)).toBe(49);
+           expect(elevarAlCuadrado(0)).toBe(0);
+           expect(elevarAlCuadrado(-5)).toBe(25);
+        });
+     });
+​
+     describe('elevarAlCubo(num)', function () {
+        it('Debe devolver el número elevado al cubo', function () {
+           expect(elevarAlCubo(3)).toBe(27);
+           expect(elevarAlCubo(0)).toBe(0);
+           expect(elevarAlCubo(-5)).toBe(-125);
+        });
+     });
+​
+     describe('elevar(num, exponent)', function () {
+        it('Debe devolver el número elevado al exponente indicado', function () {
+           expect(elevar(2, 2)).toBe(4);
+           expect(elevar(2, 3)).toBe(8);
+           expect(elevar(0, 5)).toBe(0);
+           expect(elevar(10, 1)).toBe(10);
+        });
+     });
+​
+     describe('redondearNumero(num)', function () {
+        it('Debe devolver el número redondeado', function () {
+           expect(redondearNumero(1.5)).toBe(2);
+           expect(redondearNumero(2)).toBe(2);
+           expect(redondearNumero(0.1)).toBe(0);
+        });
+     });
+​
+     describe('redondearHaciaArriba(num)', function () {
+        it('Debe devolver el número redondeado para arriba', function () {
+           expect(redondearHaciaArriba(1.5)).toBe(2);
+           expect(redondearHaciaArriba(2)).toBe(2);
+           expect(redondearHaciaArriba(0.1)).toBe(1);
+        });
+     });
+​
+     describe('numeroRandom()', function () {
+        it('Debe devolver un número entre 0 y 1', function () {
+           expect(typeof numeroRandom()).toBe('number');
+           expect(numeroRandom()).toBeGreaterThanOrEqual(0);
+           expect(numeroRandom()).toBeLessThan(1);
+        });
+        it('Debe devolver un número random', function () {
+           expect(numeroRandom()).not.toBe(numeroRandom());
+        });
+     });
   });
-  it('should return \'Not allowed\'if edad is less than 18', function() {
-    expect(mayoriaDeEdad(7)).toBe('Not allowed');
-  });
-});
-
-describe('conection(status)', function() {
-  it('should return the conection state of user', function() {
-    expect(conection(1)).toBe('Online');
-    expect(conection(2)).toBe('Away');
-    expect(conection(3)).toBe('Offline');
-    expect(conection()).toBe('Offline');
-  });
-});
-
-describe('saludo(idioma)', function() {one:1
-  it('should return \'Guten Tag!\' for aleman', function() {
-    expect(saludo('aleman')).toBe('Guten Tag!');
-  });
-  it('should return \'Hola!\' for ingles', function() {
-    expect(saludo('ingles')).toBe('Hello!');
-  });
-  it('should return \'Ni Hao!\' for mandarin', function() {
-    expect(saludo('mandarin')).toBe('Ni Hao!');
-  });
-  it('should return \'Hola!\' if no argument is passed in or if a idioma beyond ingles, mandarin, and aleman is passed in.', function() {
-    expect(saludo('frances')).toBe('Hola!');
-    expect(saludo()).toBe('Hola!');
-  });
-});
-
-describe('colors(color)', function() {
-  it('should return \'This is {color}\'', function() {
-    expect(colors("blue")).toBe('This is blue');
-    expect(colors("red")).toBe('This is red');
-    expect(colors("green")).toBe('This is green');
-    expect(colors("orange")).toBe('This is orange');
-  });
-  it('should return \'Color not found\' if there is no argument or the argument is none of the expected ones', function() {
-    expect(colors()).toBe('Color not found');
-    expect(colors("pink")).toBe('Color not found');
-  });
-});
-
-describe('esDiezOCinco(num)', function() {
-  it('should return true if num is 10 or 5', function() {
-    expect(esDiezOCinco(10)).toBe(true);
-    expect(esDiezOCinco(5)).toBe(true);
-  });
-  it('should return false if num is not 10 or 5', function() {
-    expect(esDiezOCinco(11)).toBe(false);
-    expect(esDiezOCinco(6)).toBe(false);
-    expect(esDiezOCinco(0)).toBe(false);
-    expect(esDiezOCinco(5.01)).toBe(false);
-  });
-});
-
-describe('estaEnRango(num)', function() {
-  it('should return true if num is inside range', function() {
-    expect(estaEnRango(35.5)).toBe(true);
-    expect(estaEnRango(40)).toBe(true);
-    expect(estaEnRango(49)).toBe(true);
-    expect(estaEnRango(21)).toBe(true);
-  });
-  it('should return false if outside of range', function() {
-    expect(estaEnRango(10)).toBe(false);
-    expect(estaEnRango(20)).toBe(false);
-    expect(estaEnRango(50)).toBe(false);
-    expect(estaEnRango(100)).toBe(false);
-  });
-});
-
-describe('esEntero(num)', function() {
-  it('should return true if num is 5', function() {
-    expect(esEntero(5)).toBe(true);
-  });
-  it('should return false if num is 0.5', function() {
-    expect(esEntero(0.5)).toBe(false);
-  });
-  it('should return true if num is -20', function() {
-    expect(esEntero(-20)).toBe(true);
-  });
-  it('should return true for 0', function() {
-    expect(esEntero(0)).toBe(true);
-  });
-});
-
-describe('fizzBuzz(num)', function() {
-  it('should return fizz if divisible by 3', function() {
-    expect(fizzBuzz(9)).toBe('fizz');
-  });
-  it('should return buzz if divisible by 5', function() {
-    expect(fizzBuzz(10)).toBe('buzz');
-  });
-  it('should return fizzbuzz if divisible by 3 and 5', function() {
-    expect(fizzBuzz(15)).toBe('fizzbuzz');
-  });
-  it('should return num if not divisible by 3 or 5', function() {
-    expect(fizzBuzz(4)).toBe(4);
-  });
-});
-
-describe('operadoresLogicos(num1, num2, num3)', function() {
-  it('should return \'Número 1 es mayor y positivo\' if num1 is positive and if it is greater than num2 and num3', function() {
-    expect(operadoresLogicos(50, 2, 15)).toBe('Número 1 es mayor y positivo');
-  });
-  it('should return \'Hay negativos\' if any of the arguments are negative', function() {
-    expect(operadoresLogicos(80, -1, 2)).toBe('Hay negativos');
-  });
-  it('should return num3 + 1 if num3 is greater than num1 and num2', function() {
-    expect(operadoresLogicos(1, 3, 10)).toBe(11);
-  });
-  it('should return \'Error\' if any of the arguments are equal 0', function() {
-    expect(operadoresLogicos(1, 0, 10)).toBe('Error');
-  });
-  it('should return false if none of the conditions are met', function() {
-    expect(operadoresLogicos(10, 30, 6)).toBe(false);
-  });
-});
-
-describe('esPrimo(num)', function() {
-  it('should return true if num is prime', function() {
-    expect(esPrimo(7)).toBe(true);
-    expect(esPrimo(97)).toBe(true);
-    expect(esPrimo(11)).toBe(true);
-  });
-  it('should return false if num is not prime', function() {
-    expect(esPrimo(9)).toBe(false);
-    expect(esPrimo(4)).toBe(false);
-    expect(esPrimo(10)).toBe(false);
-    expect(esPrimo(100)).toBe(false);
-    expect(esPrimo(0)).toBe(false);
-    expect(esPrimo(1)).toBe(false);
-  });
-});
-
-describe ('esVerdadero(valor)', function() {
-  it('should return Soy verdadero if valor is true', function() {
-    expect(esVerdadero(true)).toBe("Soy verdadero");
-  });
-  it('should return Soy falso if valor is false', function() {
-    expect(esVerdadero(false)).toBe("Soy falso");
-  });
-});
-
-describe ('tablaDelSeis()', function() {
-  it('should return multiplication table of 6', function() {
-    expect(tablaDelSeis()).toEqual([0 , 6, 12, 18, 24, 30, 36, 42, 48, 54, 60]);
-  });
-});
-
-describe ('tieneTresDigitos(numero)', function() {
-  it('should return true if numero has 3 digits', function() {
-    expect(tieneTresDigitos(100)).toBe(true);
-    expect(tieneTresDigitos(820)).toBe(true);
-    expect(tieneTresDigitos(900)).toBe(true);
-    expect(tieneTresDigitos(10)).toBe(false);
-    expect(tieneTresDigitos(20000)).toBe(false);
-  });
-});
-
-describe('doWhile(numero)', function() {
-  it('should add 5 to number until reaching a limit of 8 times and return the sum value', function() {
-    expect(doWhile(5)).toBe(45);
-    expect(doWhile(100)).toBe(140);
-    expect(doWhile(-1)).toBe(39);
+​
+  describe('EJERCICIO 05', function () {
+     describe('esPositivo(num)', function () {
+        it('Debe devolver el string "Es positivo" si el número es mayor a cero', function () {
+           expect(esPositivo(23)).toBe('Es positivo');
+        });
+        it('Debe devolver el string "Es negativo" si el número es menor a cero', function () {
+           expect(esPositivo(-2)).toBe('Es negativo');
+        });
+        it('Debe devolver False si el número es cero', function () {
+           expect(esPositivo(0)).toBe(false);
+        });
+     });
+​
+     describe('agregarSimboloExclamacion(str)', function () {
+        it('Debe agregar un signo de exclamacion al final del string', function () {
+           expect(agregarSimboloExclamacion('hello world')).toBe(
+              'hello world!'
+           );
+           expect(agregarSimboloExclamacion('Soy Henry')).toBe('Soy Henry!');
+        });
+     });
+​
+     describe('combinarNombres(nombre, apellido)', function () {
+        it('Debe devolver los strings combinados con un espacio en el medio', function () {
+           expect(combinarNombres('hello', 'world')).toBe('hello world');
+           expect(combinarNombres('Soy', 'Henry')).toBe('Soy Henry');
+        });
+     });
+​
+     describe('obtenerSaludo(nombre)', function () {
+        it("Debe devolver el string 'Hola {name}!'", function () {
+           expect(obtenerSaludo('Martin')).toBe('Hola Martin!');
+           expect(obtenerSaludo('Antonio')).toBe('Hola Antonio!');
+        });
+     });
+​
+     describe('obtenerAreaRectangulo(alto, ancho)', function () {
+        it('Debe retornar el área correcta del rectángulo', function () {
+           expect(obtenerAreaRectangulo(2, 2)).toBe(4);
+           expect(obtenerAreaRectangulo(3, 6)).toBe(18);
+           expect(obtenerAreaRectangulo(0, 2)).toBe(0);
+        });
+     });
+​
+     describe('retornarPerimetro(lado)', function () {
+        it('Debe retornar el perímetro correcto del cuadrado', function () {
+           expect(retornarPerimetro(2)).toBe(8);
+           expect(retornarPerimetro(8)).toBe(32);
+           expect(retornarPerimetro(0)).toBe(0);
+        });
+     });
+​
+     describe('areaDelTriangulo(base, altura)', function () {
+        it('Debe retornar el área correcta del triángulo', function () {
+           expect(areaDelTriangulo(10, 5)).toBe(25);
+           expect(areaDelTriangulo(20, 10)).toBe(100);
+           expect(areaDelTriangulo(0, 10)).toBe(0);
+        });
+     });
+​
+     describe('deEuroAdolar(euro)', function () {
+        it('Debe retornar el valor correcto de euro a dolar', function () {
+           expect(deEuroAdolar(100)).toBe(120);
+           expect(deEuroAdolar(200)).toBe(240);
+           expect(deEuroAdolar(50)).toBe(60);
+        });
+     });
+​
+     describe('esVocal(letra)', function () {
+        it('Debe devolver el string "Dato incorrecto", si el valor ingresado tiene más de una letra', function () {
+           expect(esVocal('la')).toBe('Dato incorrecto');
+           expect(esVocal('pero')).toBe('Dato incorrecto');
+        });
+        it('Debe devolver el string "Dato incorrecto", si el valor ingresado no es vocal', function () {
+           expect(esVocal('l')).toBe('Dato incorrecto');
+           expect(esVocal('p')).toBe('Dato incorrecto');
+        });
+        it('Debe devolver el string "Es vocal", si el valor ingresado lo es', function () {
+           expect(esVocal('a')).toBe('Es vocal');
+           expect(esVocal('e')).toBe('Es vocal');
+           expect(esVocal('i')).toBe('Es vocal');
+           expect(esVocal('o')).toBe('Es vocal');
+           expect(esVocal('u')).toBe('Es vocal');
+        });
+     });
   });
 });
